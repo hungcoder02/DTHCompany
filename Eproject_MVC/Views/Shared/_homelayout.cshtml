@@ -1,0 +1,24 @@
+﻿
+@{
+    ViewBag.Title = "_homelayout";
+}
+
+
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>DTH Movies</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href="@Url.Content("~/Content/style.css")" rel="stylesheet" type="text/css" media="all" />
+    <link href="@Url.Content("~/Content/slider.css")" rel="stylesheet" type="text/css" media="all" />
+    <script type="text/javascript" src="@Url.Content("~/Scripts/jquery-1.7.2.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/move-top.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/easing.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/Scripts/startstop-slider.js")"></script>
+   
+</head>
+    <body>
+        @RenderBody()
+    </body>
+</html>

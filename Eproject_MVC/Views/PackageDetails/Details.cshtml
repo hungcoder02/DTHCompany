@@ -1,0 +1,58 @@
+﻿@model Database.PackageDetail
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>PackageDetail</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.DnD.DnDname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DnD.DnDname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Packagename)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Packagename)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Descrip)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Descrip)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Img)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Img)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.PackageId }) |
+    @Html.ActionLink("Back to List", "packagetable")
+</p>

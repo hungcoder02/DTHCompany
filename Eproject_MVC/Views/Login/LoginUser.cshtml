@@ -1,0 +1,95 @@
+﻿@{
+    Layout = "~/Views/Shared/_mylayout.cshtml";
+
+
+}
+
+<h1>User</h1>
+<div class="main-content">
+    <div class="form">
+
+        <div class="sap_tabs">
+            <div id="horizontalTab" style="display: block; width: 100%; margin: 0px;">
+                <ul>
+                    <li class="resp-tab-item" aria-controls="tab_item-0" role="tab"><span>Register</span></li>
+
+                    <li class="resp-tab-item" aria-controls="tab_item-1" role="tab"><span>Sign in</span></li>
+                </ul>
+
+                <div class="tab-2 resp-tab-content" aria-labelledby="tab_item-1">
+                    <div class="facts">
+                        <div class="register">
+                            @using (Html.BeginForm("Register", "Login"))
+                            {
+                                @Html.AntiForgeryToken()
+                                <form>
+                                    <h3>User Name:</h3>
+                                    <input placeholder="Name" name="Username" type="text" required="">
+                                    <h3>Password:</h3>
+                                    <input placeholder="Password" name="Password" class="lock" type="password" required="">
+                                    <h3>Full Name:</h3>
+                                    <input placeholder="Full Name" name="Fullname" type="text" required="">
+                                    <h3>Card Number:</h3>
+                                    <input placeholder="Enter Number" name="Cardnumber" type="text" required="">
+                                    <h3>Email:</h3>
+                                    <input placeholder="Email" name="Email" type="email" required="">
+                                    <h3>Adress:</h3>
+                                    <input placeholder="Adress" name="Adress" type="text" required="">
+                                    <h3>Contact Number:</h3>
+                                    <input placeholder="Enter Tel" name="Contactnumber" type="tel" required="">
+                                    <h3>Service Subcribe Date:</h3>
+                                    <input placeholder="Date" name="Ssd" type="date" required="">
+
+                                    <div class="sign-up">
+                                        <input type="submit" value="Sign in" />
+                                    </div>
+                                </form>
+                            }
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-2 resp-tab-content" aria-labelledby="tab_item-1">
+                    <div class="facts">
+                        <div class="register">
+                            @using (Html.BeginForm("LoginUser", "Login"))
+                            {
+                                <form>
+                                    <h3>User Name:</h3>
+                                    <input placeholder="Name" name="Username" type="text" required="">
+                                    <h3>Password:</h3>
+                                    <input placeholder="Password" name="Password" class="lock" type="password" required="">
+                                    <div class="sign-up">
+                                        <input type="submit" value="Sign in" />
+                                    </div>
+                                </form>
+                            }
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+    <div class="right">
+        <h4>why you'll love it</h4>
+        <ul>
+            <li><p>See all your accounts in one place</p></li>
+            <li><p>Cloud storage for the win</p></li>
+            <li><p>Login and Using </p></li>
+        </ul>
+        <h5>Sign in with:</h5>
+        <div class="socialicons">
+            <ul>
+                <li><a class="facebook" href="#"></a></li>
+                <li><a class="twitter" href="#"></a></li>
+                <li><a class="google" href="#"></a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="clear"></div>
+</div>
+<div class="footer">
+    <p> &copy; 2022 Form Group 5. All Rights Reserved | Design by <a href="http://w3layouts.com">Aptech</a></p>
+</div>

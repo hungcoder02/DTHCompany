@@ -1,0 +1,45 @@
+﻿@model IEnumerable<Database.Admin>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Admin</h2>
+<button type="button" onclick="location.href= '@Url.Action("Login","Login")'" >logout</button>
+<button type="button" onclick="location.href= '@Url.Action("Index","Users")'">User</button>
+<button type="button" onclick="location.href= '@Url.Action("Index","PackageDetails")'">Package Details</button>
+<button type="button" onclick="location.href= '@Url.Action("Index","DnDs")'">Distributors and Dealers</button>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<p>
+   
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Password)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.Username)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Password)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.Username }) |
+        @Html.ActionLink("Details", "Details", new { id = item.Username }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.Username })
+    </td>
+</tr>
+    
+
+}
+
+</table>

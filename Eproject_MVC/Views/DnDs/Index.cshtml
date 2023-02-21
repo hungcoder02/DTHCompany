@@ -1,0 +1,49 @@
+﻿@model IEnumerable<Database.DnD>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Distributors and Dealers</h2>
+<button type="button" onclick="location.href= '@Url.Action("Login","Login")'">logout</button>
+<button type="button" onclick="location.href= '@Url.Action("Index","Users")'">User</button>
+<button type="button" onclick="location.href= '@Url.Action("Index","PackageDetails")'">Package Details</button>
+<button type="button" onclick="location.href= '@Url.Action("Index","Admins")'">Admin</button>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.DnDname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Password)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.payment)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.DnDname)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Password)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.payment)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.DnDId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.DnDId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.DnDId })
+        </td>
+    </tr>
+}
+
+</table>

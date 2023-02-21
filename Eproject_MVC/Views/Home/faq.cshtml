@@ -1,0 +1,257 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_homelayout.cshtml";
+
+}
+
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#posts").accordion({
+                header: "div.tab",
+                alwaysOpen: false,
+                autoheight: false
+            });
+        });
+    </script>
+    <div class="wrap">
+        <div class="header">
+            <div class="headertop_desc">
+                <div class="call">
+                    <p><span>Need help?</span> call us <span class="number">0976979200</span></span></p>
+                </div>
+                <div class="account_desc">
+                    <ul>
+                        <li><a href="@Url.Action("LoginUser","Login")">Login</a></li>
+                        <li><a href="@Url.Action("faq","Home")">FAQ</a></li>
+                        <li><a href="@Url.Action("LoginUser","Login")">Logout</a></li>
+
+                    </ul>
+                </div>
+                <div class="clear"></div>
+            </div>
+            <div class="header_top">
+                <div class="logo">
+                    <a href="@Url.Action("homepage","Home")"><img src="../Image/" alt="" /></a>
+                </div>
+                <div class="cart">
+                    <p>
+                        Welcome to our Online Store! <span>Cart:</span><div id="dd" class="wrapper-dropdown-2">
+                            0 item(s) - $0.00
+                            <ul class="dropdown">
+                                <li>you have no items in your Shopping cart</li>
+                            </ul>
+                        </div>
+                    </p>
+                </div>
+                <script type="text/javascript">
+                    function DropDown(el) {
+                        this.dd = el;
+                        this.initEvents();
+                    }
+                    DropDown.prototype = {
+                        initEvents: function () {
+                            var obj = this;
+
+                            obj.dd.on('click', function (event) {
+                                $(this).toggleClass('active');
+                                event.stopPropagation();
+                            });
+                        }
+                    }
+
+                    $(function () {
+
+                        var dd = new DropDown($('#dd'));
+
+                        $(document).click(function () {
+                            // all dropdowns
+                            $('.wrapper-dropdown-2').removeClass('active');
+                        });
+
+                    });
+
+                </script>
+                <div class="clear"></div>
+            </div>
+            <div class="header_bottom">
+                <div class="menu">
+                    <ul>
+                        <li><a href="@Url.Action("homepage","Home")">Home</a></li>
+                        <li><a href="@Url.Action("about","Home")">About</a></li>
+                        <li class="active"><a href="@Url.Action("faq","Home")">FAQ</a></li>
+                        <li><a href="@Url.Action("news","Home")">News</a></li>
+                        <li><a href="@Url.Action("contact","Home")">Contact</a></li>
+                        <div class="clear"></div>
+                    </ul>
+                </div>
+                <div class="search_box">
+                    <form>
+                        <input type="text" value="Search" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search';}"><input type="submit" value="">
+                    </form>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+        <div class="main">
+            <div class="content">
+                <!-- <div class="section group">
+                        <div class="grid_1_of_3 images_1_of_3">
+                              <img src="images/delivery-img1.jpg" alt="" />
+                              <h3>Lorem Ipsum is simply dummy text </h3>
+                              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                        </div>
+                        <div class="grid_1_of_3 images_1_of_3">
+                              <img src="images/delivery-img2.jpg" alt="" />
+                              <h3>Lorem Ipsum is simply dummy text </h3>
+                              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                        </div>
+                        <div class="grid_1_of_3 images_1_of_3">
+                              <img src="images/delivery-img3.jpg" alt="" />
+                              <h3>Lorem Ipsum is simply dummy text </h3>
+                              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                        </div>
+                    </div>	 -->
+                <div class="faqs">
+                    <h2>Frequently Asked Questions</h2>
+                    <div id="posts">
+                        <div class="tab bar">
+                            <h4 class="post-title">1.What is Movies?</h4>
+                        </div>
+                        <div class="panel margin-lr-7">
+                            <p>A film – also called a movie, motion picture, moving picture, picture or photoplay – is a work of visual art that simulates experiences and otherwise communicates ideas, stories, perceptions, feelings, beauty, or atmosphere through the use of moving images. These images are generally accompanied by sound and, more rarely, other sensory stimulations.[1] The word "cinema", short for cinematography, is often used to refer to filmmaking and the film industry, and to the art form that is the result of it.</p>
+                        </div>
+                        <div class="tab bar">
+                            <h4 class="post-title"> 2.I can't create an account?</h4>
+                        </div>
+                        <div class="panel margin-lr-7">
+                            <p>
+                                1.If you haven't already, set up a Google account.
+                                2.Open your device's Settings app.
+                                3.Tap Accounts Add account. Google.
+                                4.Follow the instructions to add your account.
+                                5.If needed, repeat steps to add multiple accounts.
+                            </p>
+                        </div>
+                        <div class="tab bar">
+                            <h4 class="post-title"> 3.I don't have enough money?</h4>
+                        </div>
+                        <div class="panel margin-lr-7">
+                            <p>
+                                Every business hopes their website gives great information, hits their goals, and—oh yeah—makes money. But if something isn’t working, the business needs to know why, and a lot of them call on user experience testers to give feedback.
+                                Are you good at knowing if a website is user-friendly just by spending a few minutes scanning the webpage? Companies like UserTesting or TryMyUI will pay you for your feedback. Most of them boast that you’ll get $10 for each 20-minute test you complete!1
+                                3. Take surveys.
+                            </p>
+                        </div>
+                        <!-- <div class="tab bar">
+                            <h4 class="post-title">...</h4>
+                        </div>
+                        <div class="panel margin-lr-7">
+                            <p>...</p>
+                        </div>
+                        <div class="tab bar">
+                            <h4 class="post-title">...</h4>
+                        </div>
+                        <div class="panel margin-lr-7">
+                             <p>...</p>
+                        </div>
+                        <div class="tab bar">
+                            <h4 class="post-title"> 6.What is Lorem Ipsum text of the printing?</h4>
+                        </div>
+                        <div class="panel margin-lr-7">
+                              <p>Pellentesque ornare sem lacinia quam venenatis vestibulum. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Donec id elit non mi porta gravida at eget metus.</p>
+                        </div>
+                        <div class="tab bar">
+                            <h4 class="post-title"> 7.What is Lorem Ipsum?</h4>
+                        </div>
+                        <div class="panel margin-lr-7">
+                             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                        </div>
+                        <div class="tab bar">
+                            <h4 class="post-title"> 8.What is Lorem Ipsum dummy text ever since the 1500s?</h4>
+                        </div>
+                        <div class="panel margin-lr-7">
+                             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                        </div>
+                        <div class="tab bar">
+                            <h4 class="post-title"> 9.What is Lorem Ipsum  Lorem Ipsum has been the industry's standard dummy text?</h4>
+                        </div>
+                        <div class="panel margin-lr-7">
+                              <p>Pellentesque ornare sem lacinia quam venenatis vestibulum. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Donec id elit non mi porta gravida at eget metus.</p>
+                        </div>
+                        <div class="tab bar">
+                            <h4 class="post-title"> 10.What is Lorem Ipsum typesetting industry?</h4>
+                        </div>
+                        <div class="panel margin-lr-7">
+                             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="wrap">
+            <div class="section group">
+                <div class="col_1_of_4 span_1_of_4">
+                    <h4>Information</h4>
+                    <ul>
+                        <li><a href="@Url.Action("about","Home")">About Us</a></li>
+                        <li><a href="@Url.Action("contact","Home")">Customer Service</a></li>
+
+                        <li><a href="#">Orders and Returns</a></li>
+                        <li><a href="@Url.Action("contact","Home")">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="col_1_of_4 span_1_of_4">
+                    <h4>Why buy from us</h4>
+                    <ul>
+                        <li><a href="@Url.Action("about","Home")">About Us</a></li>
+                        <li><a href="@Url.Action("contact","Home")">Customer Service</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="@Url.Action("contact","Home")">Site Map</a></li>
+
+                    </ul>
+                </div>
+                <div class="col_1_of_4 span_1_of_4">
+                    <h4>My account</h4>
+                    <ul>
+                        <li><a href="@Url.Action("contact","Home")">Sign In</a></li>
+                        <li><a href="@Url.Action("homepage","Home")">View Cart</a></li>
+                        <li><a href="#">My Wishlist</a></li>
+                        <li><a href="#">Track My Order</a></li>
+                        <li><a href="@Url.Action("contact","Home")">Help</a></li>
+                    </ul>
+                </div>
+                <div class="col_1_of_4 span_1_of_4">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><span>(84)976979200</span></li>
+                        <li><span>+00-123-000000</span></li>
+                    </ul>
+                    <div class="social-icons">
+                        <h4>Follow Us</h4>
+                        <ul>
+                            <li><a href="#" target="_blank"><img src="../Image/facebook.png" alt="" /></a></li>
+                            <li><a href="#" target="_blank"><img src="../Image/twitter.png" alt="" /></a></li>
+                            <li><a href="#" target="_blank"><img src="../Image/skype.png" alt="" /> </a></li>
+                            <li><a href="#" target="_blank"> <img src="../Image/dribbble.png" alt="" /></a></li>
+                            <li><a href="#" target="_blank"> <img src="../Image/linkedin.png" alt="" /></a></li>
+                            <div class="clear"></div>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copy_right">
+            <p>&copy; 2022 DTHCompany. All rights reserved | Design by <a href="http://google.com/">Group 5</a></p>
+        </div>
+    </div>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $().UItoTop({ easingType: 'easeOutQuart' });
+
+        });
+    </script>
+    <a href="#" id="toTop"><span id="toTopHover"> </span></a>
+
